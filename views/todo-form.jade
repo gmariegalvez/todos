@@ -1,0 +1,9 @@
+
+extends layout
+
+block content
+	h1= title
+	form(action='/todo/create', method='POST')
+		input.task(name='task', type='text', placeholder='Task')
+		input.assignee(name='assignee', type='text', placeholder='Assignee')
+		input.submit(type='submit', value='save')

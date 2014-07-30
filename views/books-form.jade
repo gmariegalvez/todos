@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1= title
+	form(action='/books/create', method='POST')
+		input.title(name='title', type='text', placeholder='Title')
+		input.author(name='author', type='text', placeholder='Author')
+		input.year(name='year', type='text', placeholder='Year')
+		input.submit(type='submit', value='save')

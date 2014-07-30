@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	h1= title
+	ul
+		- each book in books
+			li #{book.title} - #{book.author} ( #{book.year} )
