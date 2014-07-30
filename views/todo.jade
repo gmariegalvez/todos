@@ -3,6 +3,11 @@ extends layout
 
 block content
 	h1= title
-	ul
+	table
 		- each todo in todos
-			li #{todo.task} - #{todo.assignee}
+			tr
+				td #{todo.task} - #{todo.assignee}
+				td
+					a(href ='/todo/delete/#{todo.id}') delete
+				td
+					a(href ='/todo/done/#{todo.id}') done

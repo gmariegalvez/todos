@@ -14,6 +14,18 @@ router.get('/', function(req, res) {
 
 });
 
+router.get('/delete/:id', function(req, res) {
+
+	// fetch all the books from db
+	ToDo.findByIdAndRemove(req.params.id, function(err){
+
+		if(err){
+				return res.end(JSON.stringify(err));
+		}
+	});
+	res.redirect('/todo');
+});
+
 router.get('/create', function(req, res) {
 	res.render('todo-form', {title: 'Add To Do'});
 });
